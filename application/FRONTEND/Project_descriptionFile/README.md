@@ -1,4 +1,4 @@
-# 📚 حضور (Hodoor)
+## Hodoor
 
 **Hodoor** is an attendance management system built for schools to efficiently track and manage students’ attendance, notify absentees, and generate detailed reports for teachers and attendance officers.
 
@@ -83,8 +83,7 @@ Hodoor allows users to:
 
 ## 🏗️ Database Diagram (ERD)
 
-![ERD Diagram](path/to/your/erd-image.png)
-> *(Replace `path/to/your/erd-image.png` with the correct path to your uploaded ERD image.)*
+![ERD Diagram](/Users/sadeem/full-stack/application/FRONTEND/Project_descriptionFile/README.md)
 
 ---
 
