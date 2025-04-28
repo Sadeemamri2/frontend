@@ -83,7 +83,7 @@ Hodoor allows users to:
 
 ## 🏗️ Database Diagram (ERD)
 
-![ERD Diagram](/Users/sadeem/full-stack/application/FRONTEND/Project_descriptionFile/README.md)
+![ERD Diagram](/application/FRONTEND/Project_descriptionFile/ERD.png)
 
 ---
 
