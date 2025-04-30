@@ -1,0 +1,146 @@
+/* ========== مقدمة الصفحة (الشعار فقط) ========== */
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: transform 0.8s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.intro-container.move-up {
+  transform: translateY(-60vh);
+}
+
+.intro-logo {
+  width: 18rem;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 20%;
+}
+
+.intro-logo:hover {
+  transform: scale(1.05);
+}
+
+/* ========== محتوى الصفحة بعد الشعار ========== */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  padding: 2rem 4rem;
+  z-index: 1;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========== معلومات المشروع ========== */
+.home-info {
+  background-color: #f3e6ff;
+  color: #333;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  flex: 2;
+  min-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.home-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #161616;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.home-tagline {
+  font-size: 1.25rem;
+  color: #000;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.home-description {
+  font-size: 1.1rem;
+  color: #000;
+  line-height: 1.7;
+}
+
+/* ========== الأدوار ========== */
+.home-roles {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 200px;
+}
+
+.home-roles p {
+  background-color: #8A2BE2;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  width: 220px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-roles p:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== الجوال ========== */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .home-roles {
+    align-items: flex-start;
+  }
+
+  .intro-logo {
+    width: 12rem;
+  }
+}
+.back-button {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #6a0dad;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #5b0cae;
+  transform: translateY(-2px);
+}

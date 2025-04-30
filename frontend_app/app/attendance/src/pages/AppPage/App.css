@@ -1,3 +1,17 @@
+/* App.css */
+
+/* General body styles */
+body {
+  /* background-color: #c1dbe4; Light Blue background */
+  color: #fff; /* White text */
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Container for centering content */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +19,20 @@
   text-align: center;
 }
 
+/* Logo styling */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
+/* Hover effect on logo */
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #8a2be2); /* Light Purple on hover */
 }
 
+/* Animation for logo spin */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +42,49 @@
   }
 }
 
+/* Apply logo spin animation only if user preference allows */
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Card styling */
 .card {
   padding: 2em;
+  background-color: #baa1f9; /* Light purple */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff; /* White text inside cards */
 }
 
+/* Links and interactive elements */
+a {
+  color: #baa1f9; /* Light Purple */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* The "Read the Docs" text */
 .read-the-docs {
-  color: #888;
+  color: #ddd; /* Light gray for secondary links or information */
+}
+
+/* Button styling */
+button {
+  background-color: #baa1f9; /* Light purple */
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #7a1da0; /* Darker purple on hover */
 }
