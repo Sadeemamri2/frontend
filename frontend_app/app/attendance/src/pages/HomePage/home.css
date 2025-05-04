@@ -1,146 +1,127 @@
-/* ========== مقدمة الصفحة (الشعار فقط) ========== */
-.intro-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  transition: transform 0.8s ease-in-out;
-  position: relative;
-  z-index: 2;
+/* src/pages/HomePage/Home.css */
+
+.home-page {
+  text-align: center;
+  padding: 3rem 2rem; /* زيادة التباعد بين المحتويات */
+  background-color: #f4f6fc; /* خلفية ناعمة */
+  border-radius: 12px; /* حواف دائرية */
 }
 
-.intro-container.move-up {
-  transform: translateY(-60vh);
+.intro-container {
+  transition: transform 0.6s ease;
+  padding: 2rem; /* إضافة padding للمحتوى */
+  background-color: #ffffff; /* خلفية ناعمة */
+  border-radius: 12px; /* حواف دائرية */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+.intro--moved {
+  transform: translateY(-50px);
 }
 
 .intro-logo {
-  width: 18rem;
-  height: auto;
+  width: 180px; /* حجم أصغر */
   cursor: pointer;
-  transition: transform 0.3s ease;
-  border-radius: 20%;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  margin-bottom: 1rem; /* إضافة مسافة أسفل الشعار */
 }
 
 .intro-logo:hover {
-  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px #8a2be2);
+  transform: scale(1.08); /* تكبير أقل */
 }
 
-/* ========== محتوى الصفحة بعد الشعار ========== */
 .home-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 4rem;
-  padding: 2rem 4rem;
-  z-index: 1;
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
-  animation-delay: 0.3s;
-  animation-fill-mode: forwards;
+  margin-top: 3rem; /* مسافة أكبر بين المحتويات */
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* ========== معلومات المشروع ========== */
 .home-info {
-  background-color: #f3e6ff;
-  color: #333;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  flex: 2;
-  min-width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.home-info:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
 }
 
 .home-title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #161616;
-  margin-bottom: 0.5rem;
-  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-weight: 600; /* جعل العنوان أكثر وضوحًا */
+  margin-bottom: 0.6rem; /* زيادة التباعد بين العنوان */
+  color: #333; /* لون داكن للعناوين */
 }
 
 .home-tagline {
-  font-size: 1.25rem;
-  color: #000;
+  font-size: 1.2rem;
+  color: #666; /* لون أفتح للعنوان الفرعي */
   margin-bottom: 1rem;
-  font-weight: 300;
 }
 
 .home-description {
-  font-size: 1.1rem;
-  color: #000;
-  line-height: 1.7;
+  max-width: 650px; /* زيادة عرض النص */
+  margin: 0 auto 2rem;
+  color: #777; /* لون أكثر هدوءًا */
+  line-height: 1.6; /* تحسين تباعد السطور */
 }
 
-/* ========== الأدوار ========== */
 .home-roles {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  min-width: 200px;
+  margin-bottom: 2rem;
 }
 
-.home-roles p {
-  background-color: #8A2BE2;
-  color: #fff;
+.roles-header {
+  font-size: 1.5rem;
   font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  width: 220px;
-  text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
-.home-roles p:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.roles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* إزالة الهوامش الزائدة */
 }
 
-/* ========== الجوال ========== */
-@media (max-width: 768px) {
-  .home-content {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem;
-  }
-
-  .home-roles {
-    align-items: flex-start;
-  }
-
-  .intro-logo {
-    width: 12rem;
-  }
+.roles-list li {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+  color: #555;
 }
-.back-button {
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #6a0dad;
-  color: #fff;
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.9rem 1.8rem; /* زيادة الحجم قليلاً */
   border: none;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للأزرار */
+}
+
+.btn--primary {
+  background-color: #baa1f9;
+  color: #fff;
+}
+
+.btn--secondary {
+  background-color: #fff;
+  color: #baa1f9;
+  border: 2px solid #baa1f9;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1); /* زيادة السطوع قليلاً عند التمرير */
+}
+
+.back-button {
+  background: none;
+  color: #555;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }
 
 .back-button:hover {
-  background-color: #5b0cae;
-  transform: translateY(-2px);
+  color: #333;
 }

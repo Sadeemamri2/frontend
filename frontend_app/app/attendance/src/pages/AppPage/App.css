@@ -1,14 +1,11 @@
-/* App.css */
-
 /* General body styles */
 body {
-  /* background-color: #c1dbe4; Light Blue background */
-  color: #fff; /* White text */
-  font-family:Arial, Helvetica, sans-serif;
+  background-color: #556984; /* Background color for better readability */
+  color: #000000; /* Darker text color for better contrast */
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
-  
 }
 
 /* Container for centering content */
@@ -24,12 +21,13 @@ body {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms, transform 0.5s ease;
 }
 
 /* Hover effect on logo */
 .logo:hover {
   filter: drop-shadow(0 0 2em #8a2be2); /* Light Purple on hover */
+  transform: scale(1.1); /* Scale up the logo on hover for extra effect */
 }
 
 /* Animation for logo spin */
@@ -52,10 +50,15 @@ body {
 /* Card styling */
 .card {
   padding: 2em;
-  background-color: #baa1f9; /* Light purple */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #baa1f9, #9a7ce8); /* Gradient effect for cards */
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   color: #fff; /* White text inside cards */
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
 }
 
 /* Links and interactive elements */
@@ -66,11 +69,12 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: #7a1da0; /* Slightly darker purple on hover */
 }
 
 /* The "Read the Docs" text */
 .read-the-docs {
-  color: #ddd; /* Light gray for secondary links or information */
+  color: #aaa; /* Light gray for secondary links or information */
 }
 
 /* Button styling */
@@ -82,9 +86,25 @@ button {
   font-size: 1.2rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #7a1da0; /* Darker purple on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Make everything responsive */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+  }
 }

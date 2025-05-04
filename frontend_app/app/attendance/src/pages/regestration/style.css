@@ -1,0 +1,83 @@
+/* Container for the page */
+.page-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #bbd0f0; /* Very light purple/blue */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading styles */
+.page-container h1, .page-container h2 {
+  color: #34699a; /* Soft blue */
+  margin-bottom: 20px;
+}
+
+/* Form container for alignment */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Table inside form container */
+.form-container table {
+  width: 100%;
+  margin: auto;
+}
+
+/* Table cells styling */
+.form-container td {
+  text-align: left;
+}
+
+/* Input field styling */
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cdd9e5;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: rgb(171, 206, 249);
+}
+
+/* Input field focus state */
+input:focus {
+  border-color: #34699a;
+  outline: none;
+}
+
+/* Button styling */
+.btn.submit {
+  background-color: #34699a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Disabled button state */
+.btn.submit:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Error message styling */
+.error {
+  color: #d9534f;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
