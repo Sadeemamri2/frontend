@@ -1,17 +1,14 @@
-import React, { useContext } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../context/AuthContext';
+// import React, { useContext } from 'react';
+import {useNavigate } from 'react-router-dom';
+// import { AuthContext } from '../../../context/AuthContext';
 import ProtectedRoute from '../../../component/ProtectedRoute';
 import Navbar from '../../../component/Navbar';
-import Loading from '../../../component/Loading';
+// import Loading from '../../../component/Loading';
 import './StudentDashboard.css';
 
-export default function StudentDashboard() {
-  const { user, loading, logout } = useContext(AuthContext);
+export default function StudentDashboard({user}) {
+  
   const navigate = useNavigate();
-  console.log("student dashboard", user);
-  if (loading) return <Loading />;
-  // if (!user) return <Navigate to="/login" />;
 
   const handleLogout = () => {
     logout();
@@ -19,15 +16,12 @@ export default function StudentDashboard() {
   };
 
   return (
-    <ProtectedRoute role="student">
+    <>
       <Navbar />
       <div className="student-dashboard">
         <header>
           <h1>Student Dashboard</h1>
           <p>Welcome, {user.username}!</p>
-          <button onClick={handleLogout} className="btn logout">
-            Logout
-          </button>
         </header>
 
         <section className="actions">
@@ -39,6 +33,6 @@ export default function StudentDashboard() {
           </button>
         </section>
       </div>
-    </ProtectedRoute>
+    </>
   );
 }

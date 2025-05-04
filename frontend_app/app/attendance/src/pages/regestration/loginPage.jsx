@@ -18,10 +18,15 @@ export default function LoginPage({ setUser }) {
 
       const role = profile.role;
       console.log('console log for profile.role:', role);
-      navigate(`/${role.toLowerCase()}-dashboard`); // Redirect based on role
+      navigate(`/dashboard`); // Redirect based on role
     } catch (err) {
       alert('Login failed: ' + err.message);
     }
+  }
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    navigate('/signup');
   }
 
   return (
@@ -41,7 +46,9 @@ export default function LoginPage({ setUser }) {
           required
         />
         <button type="submit" className="btn btn--primary">Login</button>
+        <button className="btn btn--primary" onClick={handleSignUp}>Sign up</button>
       </form>
+
     </div>
   );
 }

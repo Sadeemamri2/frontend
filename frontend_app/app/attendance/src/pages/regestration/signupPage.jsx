@@ -15,7 +15,7 @@ export default function SignupPage() {
     console.log(form)
     try {
       // 1. سجل المستخدم
-      await signup({
+      const user = await signup({
         username: form.username,
         email: form.email,
         password: form.password,
@@ -30,10 +30,12 @@ export default function SignupPage() {
 
       // 3. خزّن التوكن في localStorage
       localStorage.setItem('token', loginData.access);
+      localStorage.setItem('user', JSON.stringify(user));  // Store profile in localStorage
+
       console.log('User logged in successfully:', loginData);
 
       // 4. وجه المستخدم للداشبورد
-      navigate(`/${form.role}-dashboard`);
+      navigate(`/dashboard`);
     } catch (err) {
       setError(err.message);
     }

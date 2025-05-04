@@ -8,6 +8,9 @@ import TeacherDashboard from '../dashboard/TeacherDashboard/TeacherDashboard';
 import StudentDashboard from '../dashboard/StudentDashboard/StudentDashboard';
 import ReportsPage from '../ReportsPage/ReportsPage';
 import AttendanceProcess from '../AttendancePage/AttendanceProcess';
+
+import Dashboard from '../dashboard/Dashboard';
+
 import './App.css'; 
 
 export default function App() {
@@ -39,9 +42,10 @@ export default function App() {
       <Route path="/login" element={<LoginPage setUser={setUser} />} />
       
       {/* Protected Routes based on user roles */}
-      <Route path="/admin-dashboard" element={<ProtectedRoute element={<AdminDashboard user={user} />} role="admin" />} />
+      <Route path="/dashboard" element={<Dashboard user={user}/>}/>
+      {/* <Route path="/admin-dashboard" element={<ProtectedRoute element={<AdminDashboard user={user} />} role="admin" />} />
       <Route path="/teacher-dashboard" element={<ProtectedRoute element={<TeacherDashboard user={user} />} role="teacher" />} />
-      <Route path="/student-dashboard" element={<ProtectedRoute element={<StudentDashboard user={user} />} role="student" />} />
+      <Route path="/student-dashboard" element={<ProtectedRoute element={<StudentDashboard user={user} />} role="student" />} /> */}
       
       <Route path="/attendance-process" element={<AttendanceProcess user={user} />} />
       <Route path="/reports" element={<ReportsPage user={user} />} />
