@@ -15,9 +15,6 @@ export default function LoginPage({ setUser }) {
       const profile = await getProfile();
       setUser(profile);  // Set user state
       localStorage.setItem('user', JSON.stringify(profile));  // Store profile in localStorage
-
-      const role = profile.role;
-      console.log('console log for profile.role:', role);
       navigate(`/dashboard`); // Redirect based on role
     } catch (err) {
       alert('Login failed: ' + err.message);

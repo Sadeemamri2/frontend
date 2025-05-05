@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchClassrooms, recordAttendance } from '../../utilitis/api_request';
 import '../AttendancePage/AttendanceProcess.css';
+import { sendRequest } from '../../utilitis/api_request'; 
 
 export default function AttendanceProcess({ user }) {
   const [classrooms, setClassrooms] = useState([]);
@@ -9,6 +10,7 @@ export default function AttendanceProcess({ user }) {
   const [attendanceData, setAttendanceData] = useState({});
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(null); // Error state
+  
 
   // Fetch classrooms when component mounts
   useEffect(() => {
@@ -34,10 +36,10 @@ export default function AttendanceProcess({ user }) {
     const getStudents = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/classrooms/${selectedClassroom}/`);
-        const data = await response.json();
-        setStudents(data.students || []);
+        const data = await sendRequest(`/classrooms/${selectedClassroom}/students/`);
+        setStudents(data);
       } catch (err) {
+        console.error(err);
         setError('Failed to load students');
       } finally {
         setLoading(false);

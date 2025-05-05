@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-// import { AuthContext } from '../../../context/AuthContext';
 import ProtectedRoute from '../../../component/ProtectedRoute';
 import Navbar from '../../../component/Navbar';
 import Loading from '../../../component/Loading';
-// import './AdminDashboard.css';
+
+
 
 export default function AdminDashboard({user}) {
-  // const { user, loading, logout } = useContext(AuthContext);
+  
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -28,11 +28,11 @@ export default function AdminDashboard({user}) {
         </header>
 
         <section className="actions">
-          <button onClick={() => navigate('/manage-users')} className="btn">
-            Manage Users
-          </button>
           <button onClick={() => navigate('/reports')} className="btn">
             View Reports
+          </button>
+          <button onClick={() => navigate('/attendance-process')} className="btn">
+            Manage Attendance
           </button>
         </section>
       </div>

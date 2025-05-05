@@ -1,19 +1,33 @@
 /* General body styles */
+/* app.css */
+
 body {
-  background-color: #556984; /* Background color for better readability */
-  color: #000000; /* Darker text color for better contrast */
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #6e79c0; /* خلفية بلون أزرق فاتح */
+  color: #000000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Container for centering content */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+  background-color: rgba(118, 147, 175, 0.61); /* خلفية شفافة مع ظل */
   padding: 2rem;
-  text-align: center;
+  margin: 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عمودي */
+  align-items: center; /* محاذاة للعناصر في المنتصف */
+  justify-content: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Logo styling */
@@ -26,8 +40,8 @@ body {
 
 /* Hover effect on logo */
 .logo:hover {
-  filter: drop-shadow(0 0 2em #8a2be2); /* Light Purple on hover */
-  transform: scale(1.1); /* Scale up the logo on hover for extra effect */
+  filter: drop-shadow(0 0 2em #6c86b3); /* ظل خفيف باللون الأرجواني عند التمرير */
+  transform: scale(1.1); /* تكبير الشعار عند التمرير */
 }
 
 /* Animation for logo spin */
@@ -50,36 +64,36 @@ body {
 /* Card styling */
 .card {
   padding: 2em;
-  background: linear-gradient(145deg, #baa1f9, #9a7ce8); /* Gradient effect for cards */
-  border-radius: 12px; /* Smooth rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  color: #fff; /* White text inside cards */
+  background: linear-gradient(145deg, #baa1f9, #9a7ce8); /* تأثير تدرج لوني */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* تأثير الظل الخفيف */
+  color: #fff;
   transition: box-shadow 0.3s ease;
+  width: 100%; /* عرض العنصر كامل */
+  max-width: 400px; /* أقصى عرض */
+  margin: 1rem;
+  text-align: center; /* محاذاة النص في الوسط */
 }
 
+/* Hover effect for cards */
 .card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
 }
 
 /* Links and interactive elements */
 a {
-  color: #baa1f9; /* Light Purple */
+  color: #baa1f9; /* اللون الأرجواني الفاتح */
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #7a1da0; /* Slightly darker purple on hover */
-}
-
-/* The "Read the Docs" text */
-.read-the-docs {
-  color: #aaa; /* Light gray for secondary links or information */
+  color: #6e7d9e; /* اللون الأرجواني الداكن عند التمرير */
 }
 
 /* Button styling */
 button {
-  background-color: #baa1f9; /* Light purple */
+  background-color: #baa1f9; /* اللون الأرجواني الفاتح */
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -87,24 +101,45 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; /* جعل الزر يمتد كامل العرض */
+  max-width: 200px; /* الحد الأقصى للعرض */
+  margin: 1.5rem 0;
 }
 
+/* Hover effect for buttons */
 button:hover {
-  background-color: #7a1da0; /* Darker purple on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: #7a1da0; /* اللون الأرجواني الداكن عند التمرير */
+  transform: translateY(-2px); /* رفع الزر عند التمرير */
+}
+
+/* Read the docs text styling */
+.read-the-docs {
+  color: #aaa; /* لون رمادي فاتح للنصوص الثانوية */
 }
 
 /* Make everything responsive */
 @media (max-width: 768px) {
   #root {
-    padding: 1rem;
+    padding: 1rem; /* تقليل الحواف في الشاشات الصغيرة */
   }
 
   .card {
-    padding: 1.5em;
+    padding: 1.5em; /* تقليل الحشو داخل البطاقة */
   }
 
   button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.5rem; /* تقليل حجم الزر */
+  }
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

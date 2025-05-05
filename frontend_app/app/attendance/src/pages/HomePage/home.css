@@ -1,127 +1,184 @@
-/* src/pages/HomePage/Home.css */
+/* Home.css */
 
-.home-page {
-  text-align: center;
-  padding: 3rem 2rem; /* زيادة التباعد بين المحتويات */
-  background-color: #f4f6fc; /* خلفية ناعمة */
-  border-radius: 12px; /* حواف دائرية */
+/* ألوان رئيسية */
+:root {
+  --primary-color: #6a82fb;        /* أزرق فاتح */
+  --secondary-color: #dcd6f7;      /* بنفسجي فاتح جدًا */
+  --background-color: #ffffff;     /* أبيض */
+  --text-color: #333;
+  --button-primary: #6a82fb;
+  --button-secondary: #b8b8ff;
+  --button-hover: #4e62d4;
 }
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* الحاوية الرئيسية */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* شاشة الشعار */
 .intro-container {
   transition: transform 0.6s ease;
-  padding: 2rem; /* إضافة padding للمحتوى */
-  background-color: #ffffff; /* خلفية ناعمة */
-  border-radius: 12px; /* حواف دائرية */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro--moved {
-  transform: translateY(-50px);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .intro-logo {
-  width: 180px; /* حجم أصغر */
+  width: 200px;
+  height: auto;
   cursor: pointer;
-  transition: filter 0.3s ease, transform 0.3s ease;
-  margin-bottom: 1rem; /* إضافة مسافة أسفل الشعار */
+  transition: transform 0.4s ease;
 }
 
 .intro-logo:hover {
-  filter: drop-shadow(0 0 12px #8a2be2);
-  transform: scale(1.08); /* تكبير أقل */
+  transform: scale(1.05);
 }
 
+/* المحتوى بعد ظهور الشعار */
 .home-content {
-  margin-top: 3rem; /* مسافة أكبر بين المحتويات */
+  margin-top: 30px;
+  max-width: 800px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  display:absolute;
+  top: 5px;
+  justify-items: center;
+  
 }
 
-.home-info {
-  margin-bottom: 2rem;
-}
-
+/* عناوين وأقسام */
 .home-title {
   font-size: 2.5rem;
-  font-weight: 600; /* جعل العنوان أكثر وضوحًا */
-  margin-bottom: 0.6rem; /* زيادة التباعد بين العنوان */
-  color: #333; /* لون داكن للعناوين */
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .home-tagline {
   font-size: 1.2rem;
-  color: #666; /* لون أفتح للعنوان الفرعي */
-  margin-bottom: 1rem;
+  text-align: center;
+  color: #555;
+  margin-bottom: 15px;
 }
 
 .home-description {
-  max-width: 650px; /* زيادة عرض النص */
-  margin: 0 auto 2rem;
-  color: #777; /* لون أكثر هدوءًا */
-  line-height: 1.6; /* تحسين تباعد السطور */
-}
-
-.home-roles {
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .roles-header {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .roles-list {
   list-style: none;
   padding: 0;
-  margin: 0; /* إزالة الهوامش الزائدة */
+  text-align: center;
+  font-size: 1.1rem;
 }
 
 .roles-list li {
-  font-size: 1.1rem;
-  margin: 0.3rem 0;
-  color: #555;
+  margin: 6px 0;
 }
 
+/* الأزرار */
 .auth-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 15px;
+  margin: 25px 0;
 }
 
 .btn {
-  padding: 0.9rem 1.8rem; /* زيادة الحجم قليلاً */
+  padding: 12px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للأزرار */
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .btn--primary {
-  background-color: #baa1f9;
-  color: #fff;
+  background-color: var(--button-primary);
+  color: white;
 }
 
 .btn--secondary {
-  background-color: #fff;
-  color: #baa1f9;
-  border: 2px solid #baa1f9;
+  background-color: var(--button-secondary);
+  color: #333;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1); /* زيادة السطوع قليلاً عند التمرير */
+  transform: scale(1.05);
 }
 
-.back-button {
+.btn--primary:hover {
+  background-color: var(--button-hover);
+  color: #fff;
+}
+
+.btn--secondary:hover {
+  background-color: #a0a0f0;
+}
+
+.btn--link {
   background: none;
-  color: #555;
-  font-size: 0.9rem;
+  color: var(--primary-color);
   text-decoration: underline;
+  margin-top: 10px;
 }
 
-.back-button:hover {
-  color: #333;
+/* حركة ظهور */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* استجابة الهاتف */
+@media (max-width: 600px) {
+  .home-content {
+    padding: 20px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }

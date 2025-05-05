@@ -8,7 +8,7 @@ export default function Home() {
   const [showContent, setShowContent] = useState(false);
 
   return (
-    <div className="home-page">
+    <div className="main-container">
       <div className={`intro-container ${showContent ? 'intro--moved' : ''}`}>
         <img
           src={logo}
@@ -17,7 +17,6 @@ export default function Home() {
           onClick={() => setShowContent(true)}
         />
       </div>
-
       {showContent && (
         <div className="home-content">
           <section className="home-info">
@@ -57,5 +56,5 @@ export default function Home() {
         </div>
       )}
     </div>
-);
+  );
 }
