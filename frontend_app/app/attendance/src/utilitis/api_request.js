@@ -73,7 +73,7 @@ export function fetchClassrooms() {
   return sendRequest('/classrooms/', 'GET');
 }
 
-export function createClassroom({ name, year}) {
+export function createClassroom({ name, year, role }) {
   return sendRequest('/classrooms/', 'POST', { name, year,role });
 }
 
