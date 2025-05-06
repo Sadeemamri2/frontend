@@ -1,0 +1,133 @@
+/* AttendanceProcess.css */
+
+/* حاوية الحضور الرئيسية */
+.attendance-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff; /* خلفية بيضاء ناعمة */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* ظل ثقيل لإبراز الحاوية */
+  font-family: 'Helvetica Neue', sans-serif;
+  border: 1px solid #e4e4e4;
+}
+
+/* العنوان الرئيسي */
+.attendance-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: #523514; /* أزرق غامق لزيادة التركيز */
+  font-weight: 600;
+}
+
+/* تسميات الحقول */
+.attendance-container label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  color: #555; /* لون داكن ولكنه غير حاد */
+  font-size: 1rem;
+}
+
+/* قوائم الاختيار */
+.attendance-container select {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  background-color: #f4f4f4;
+  color: #333; /* جعل النص داخل select داكنًا لزيادة وضوحه */
+}
+
+/* قائمة الطلاب */
+.student-list {
+  margin-top: 2rem;
+}
+
+.student-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.student-row:hover {
+  background-color: #f9f9f9; /* تأثير عند التحويم على كل صف */
+}
+
+.student-row:last-child {
+  border-bottom: none;
+}
+
+/* نصوص الطلاب */
+.student-row p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333; /* النص داكن وواضح */
+}
+
+/* حقل النص داخل الصف */
+.student-row select,
+.student-row input[type="text"] {
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fafafa; /* خلفية ناعمة للحقول */
+}
+
+/* زر الإرسال */
+.submit-btn {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 0.8rem 2.5rem;
+  background: #817cc8; /* أزرق دافئ وجذاب */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 240px; /* عرض ثابت للزر */
+}
+
+.submit-btn:hover {
+  background: #474c83; /* أزرق داكن عند التحويم */
+  transform: translateY(-3px); /* تأثير رفع الزر عند التحويم */
+}
+
+.submit-btn:active {
+  background: #363e6e; /* أزرق داكن عند الضغط */
+  transform: translateY(1px); /* تأثير ضغط الزر */
+}
+
+/* تصميم الاستجابة (responsive) */
+@media (max-width: 600px) {
+  .attendance-container {
+    padding: 1.5rem; /* تقليل الحشو على الشاشات الصغيرة */
+  }
+
+  .student-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .submit-btn {
+    width: 100%; /* جعل الزر يأخذ عرض كامل */
+    padding: 1rem; /* زيادة الحشو للزر */
+  }
+
+  .attendance-container h2 {
+    font-size: 1.8rem; /* تقليل حجم العنوان على الأجهزة الصغيرة */
+  }
+
+  .student-row p {
+    font-size: 0.95rem; /* تقليل حجم النص على الأجهزة الصغيرة */
+  }
+}

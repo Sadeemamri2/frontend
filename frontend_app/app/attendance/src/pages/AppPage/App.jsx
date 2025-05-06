@@ -7,8 +7,8 @@ import ReportsPage from '../ReportsPage/ReportsPage';
 import AttendanceProcess from '../AttendancePage/AttendanceProcess';
 import Dashboard from '../dashboard/Dashboard';
 import Loading from '../../component/Loading';
-import './App.css'; 
 import ManageStudents from '../../ManageStudents/ManageStudents';
+import LogoutPage from '../regestration/logoutPage'
 
 //image
 
@@ -37,10 +37,10 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/login" element={<LoginPage setUser={setUser} />} />
+      <Route path="/logout" element={<LogoutPage setUser={setUser} />} />
       <Route path="/dashboard" element={<Dashboard user={user}/>}/>
       <Route path="/attendance-process" element={<AttendanceProcess user={user} />} />
       <Route path="/reports" element={<ReportsPage user={user} />} />
-      <Route path="/students" element={<ManageStudents user={user} />} />
     </Routes>
   );
 }

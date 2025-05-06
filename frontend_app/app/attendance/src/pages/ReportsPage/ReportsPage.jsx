@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // استيراد useNavigate
 import { fetchReports } from '../../utilitis/api_request';
-import './ReportsPage.css';
+import './style.css'
 
 export default function ReportsPage() {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // تهيئة useNavigate
 
   useEffect(() => {
     fetchReports()
@@ -28,7 +30,11 @@ export default function ReportsPage() {
   }
 
   return (
-    <div className="page-container">
+    <div className="page-container-report">
+      <button onClick={() => navigate('/dashboard')} className="btn">
+        Return to Dashboard
+      </button>
+
       <h1>Reports</h1>
 
       {error && <p className="error">{error}</p>}

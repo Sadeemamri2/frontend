@@ -12,7 +12,6 @@ export default function SignupPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     setError('');
-    console.log(form)
     try {
       // 1. سجل المستخدم
       const user = await signup({
@@ -32,8 +31,6 @@ export default function SignupPage() {
       localStorage.setItem('token', loginData.access);
       localStorage.setItem('user', JSON.stringify(user));  // Store profile in localStorage
 
-      console.log('User logged in successfully:', loginData);
-
       // 4. وجه المستخدم للداشبورد
       navigate(`/dashboard`);
     } catch (err) {
@@ -42,7 +39,8 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="signup-page">
+    <div className="page-container">
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit} className="signup-form">
         {error && <p className="error">{error}</p>}
 

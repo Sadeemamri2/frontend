@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // استيراد useNavigate
 import { fetchClassrooms, sendRequest } from '../../utilitis/api_request';
-import '../AttendancePage/AttendanceProcess.css';
+import './style.css';
 
 export default function AttendanceProcess({ user }) {
   const [classrooms, setClassrooms] = useState([]);
@@ -9,6 +10,7 @@ export default function AttendanceProcess({ user }) {
   const [attendanceData, setAttendanceData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();  // تهيئة useNavigate
 
   const fetchStudents = async () => {
     try {
@@ -55,8 +57,7 @@ export default function AttendanceProcess({ user }) {
         setLoading(false);
       }
     };
-    // getStudentsByClassroom();
-    fetchStudents()
+    fetchStudents();
   }, [selectedClassroom]);
 
   // Handle status change for a student
@@ -105,6 +106,10 @@ export default function AttendanceProcess({ user }) {
 
   return (
     <div className="attendance-container">
+      <button onClick={() => navigate('/dashboard')} className="btn">
+        Return to Dashboard
+      </button>
+
       <h2>Attendance Process</h2>
 
       {loading && <div>Loading...</div>}

@@ -1,3 +1,4 @@
+// src/pages/LoginPage/LoginPage.jsx
 import React, { useState } from 'react';
 import { login, getProfile } from '../../utilitis/api_request.js';
 import { useNavigate } from 'react-router-dom';
@@ -27,7 +28,8 @@ export default function LoginPage({ setUser }) {
   }
 
   return (
-    <div className="login-page">
+    <div className="page-container">
+      <h1>Login</h1>
       <form onSubmit={handleLogin} className="login-form">
         <input
           value={username}
@@ -43,9 +45,8 @@ export default function LoginPage({ setUser }) {
           required
         />
         <button type="submit" className="btn btn--primary">Login</button>
-        <button className="btn btn--primary" onClick={handleSignUp}>Sign up</button>
+        <button className="btn btn--secondary" onClick={handleSignUp}>Sign up</button>
       </form>
-
     </div>
   );
 }

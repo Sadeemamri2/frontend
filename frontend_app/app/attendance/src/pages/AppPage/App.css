@@ -1,8 +1,7 @@
-/* General body styles */
-/* app.css */
+/* General body styles
 
 body {
-  background-color: #6e79c0; /* خلفية بلون أزرق فاتح */
+  background-color: #6e79c0; 
   color: #000000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
@@ -14,23 +13,23 @@ body {
   align-items: center;
 }
 
-/* Container for centering content */
+
 #root {
   max-width: 1000px;
   width: 100%;
-  background-color: rgba(118, 147, 175, 0.61); /* خلفية شفافة مع ظل */
+  background-color: rgba(118, 147, 175, 0.61); 
   padding: 2rem;
   margin: 2rem auto;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   display: flex;
-  flex-direction: column; /* ترتيب العناصر عمودي */
-  align-items: center; /* محاذاة للعناصر في المنتصف */
+  flex-direction: column; 
+  align-items: center; 
   justify-content: center;
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Logo styling */
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -38,13 +37,13 @@ body {
   transition: filter 300ms, transform 0.5s ease;
 }
 
-/* Hover effect on logo */
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #6c86b3); /* ظل خفيف باللون الأرجواني عند التمرير */
-  transform: scale(1.1); /* تكبير الشعار عند التمرير */
+  filter: drop-shadow(0 0 2em #6c86b3); 
+  transform: scale(1.1); 
 }
 
-/* Animation for logo spin */
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -54,85 +53,89 @@ body {
   }
 }
 
-/* Apply logo spin animation only if user preference allows */
+
 @media (prefers-reduced-motion: no-preference) {
   .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-/* Card styling */
 .card {
   padding: 2em;
-  background: linear-gradient(145deg, #baa1f9, #9a7ce8); /* تأثير تدرج لوني */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* تأثير الظل الخفيف */
+  background: linear-gradient(145deg, #baa1f9, #9a7ce8); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   color: #fff;
   transition: box-shadow 0.3s ease;
-  width: 100%; /* عرض العنصر كامل */
-  max-width: 400px; /* أقصى عرض */
+  width: 100%;
+  max-width: 400px;
   margin: 1rem;
-  text-align: center; /* محاذاة النص في الوسط */
+  text-align: center; 
 }
 
-/* Hover effect for cards */
+
 .card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
-/* Links and interactive elements */
+
 a {
-  color: #baa1f9; /* اللون الأرجواني الفاتح */
+  color: #baa1f9; 
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #6e7d9e; /* اللون الأرجواني الداكن عند التمرير */
+  color: #6e7d9e; 
 }
 
-/* Button styling */
+
 button {
-  background-color: #baa1f9; /* اللون الأرجواني الفاتح */
-  color: #fff;
+  background-color: #baa1f9; 
   border: none;
   padding: 1rem 2rem;
   font-size: 1.2rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 100%; /* جعل الزر يمتد كامل العرض */
-  max-width: 200px; /* الحد الأقصى للعرض */
+  width: 100%; 
+  max-width: 200px;
   margin: 1.5rem 0;
+  box-sizing: border-box; 
 }
 
-/* Hover effect for buttons */
+
 button:hover {
-  background-color: #7a1da0; /* اللون الأرجواني الداكن عند التمرير */
-  transform: translateY(-2px); /* رفع الزر عند التمرير */
+  background-color: #7a1da0; 
+  transform: translateY(-2px); 
 }
 
-/* Read the docs text styling */
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(186, 161, 249, 0.5); 
+}
+
+
 .read-the-docs {
-  color: #aaa; /* لون رمادي فاتح للنصوص الثانوية */
+  color: #aaa; 
 }
 
-/* Make everything responsive */
+
 @media (max-width: 768px) {
   #root {
-    padding: 1rem; /* تقليل الحواف في الشاشات الصغيرة */
+    padding: 1rem; 
   }
 
   .card {
-    padding: 1.5em; /* تقليل الحشو داخل البطاقة */
+    padding: 1.5em; 
   }
 
   button {
-    padding: 0.8rem 1.5rem; /* تقليل حجم الزر */
+    padding: 0.8rem 1.5rem; 
   }
 }
 
-/* Animation for fade-in effect */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -142,4 +145,4 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */

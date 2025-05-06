@@ -7,7 +7,7 @@ export default function LogoutPage({ setUser }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setUser(null);
+    setUser?.(null); // only if setUser is passed
     localStorage.removeItem("user");
     navigate("/login");
   }, [navigate, setUser]);
