@@ -2,6 +2,7 @@ import React from 'react';
 import {useNavigate } from 'react-router-dom';
 import ProtectedRoute from '../../../component/ProtectedRoute';
 import Navbar from '../../../component/Navbar';
+import logout from '../../regestration/logoutPage';
 // import Loading from '../../../component/Loading';
 import './StudentDashboard.css';
 

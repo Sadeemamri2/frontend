@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+
 import { Navigate, useNavigate } from 'react-router-dom';
 import ProtectedRoute from '../../../component/ProtectedRoute';
 import Navbar from '../../../component/Navbar';
 import Loading from '../../../component/Loading';
+import logout from '../../regestration/logoutPage';
 
 
 

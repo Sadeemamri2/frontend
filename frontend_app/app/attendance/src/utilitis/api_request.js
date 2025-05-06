@@ -62,7 +62,22 @@ export async function login({ username, password }) {
 export function logout() {
   localStorage.removeItem('token'); // Clear the token on logout
 }
+// --- Student APIs ---
+export function fetchStudents() {
+  return sendRequest('/students/', 'GET');
+}
 
+export function deleteStudent(id) {
+  return sendRequest(`/students/${id}/`, 'DELETE');
+}
+
+export function updateStudent(id, studentData) {
+  return sendRequest(`/students/${id}/`, 'PUT', studentData);
+}
+
+export function createStudent(studentData) {
+  return sendRequest('/students/', 'POST', studentData);
+}
 // Fetch the current user’s profile from your backend:
 export function getProfile() {
   return sendRequest('/users/me/', 'GET');
