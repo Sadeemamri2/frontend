@@ -9,6 +9,7 @@ import Dashboard from '../dashboard/Dashboard';
 import Loading from '../../component/Loading';
 import ManageStudents from '../../ManageStudents/ManageStudents';
 import LogoutPage from '../regestration/logoutPage'
+import LessonsPage from '../../component/lessons/LessonsPage'
 
 //image
 
@@ -41,6 +42,7 @@ export default function App() {
       <Route path="/dashboard" element={<Dashboard user={user}/>}/>
       <Route path="/attendance-process" element={<AttendanceProcess user={user} />} />
       <Route path="/reports" element={<ReportsPage user={user} />} />
+      <Route path="/lessons" element={<LessonsPage />} />
     </Routes>
   );
 }

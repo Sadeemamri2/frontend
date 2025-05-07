@@ -1,16 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-// import { AuthContext } from '../../../context/AuthContext';
-import ProtectedRoute from '../../../component/ProtectedRoute';
 import Navbar from '../../../component/Navbar';
-import Loading from '../../../component/Loading';
 import './TeacherDashboard.css';
+import { logout } from '../../../utilitis/api_request'; 
 
-export default function TeacherDashboard({user}) {
-  
+export default function TeacherDashboard({ user }) {
   const navigate = useNavigate();
 
-  // if (!user) return <Navigate to="/login" />;
+  if (!user) return <Navigate to="/login" />;
 
   const handleLogout = () => {
     logout();
@@ -33,7 +30,7 @@ export default function TeacherDashboard({user}) {
           <button onClick={() => navigate('/lessons')} className="btn">
             Manage Lessons
           </button>
-          <button onClick={() => navigate('/student-reports')} className="btn">
+          <button onClick={() => navigate('/reports')} className="btn">
             View Student Reports
           </button>
         </section>

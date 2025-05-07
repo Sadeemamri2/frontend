@@ -1,22 +1,82 @@
+/* General Styles */
 .teacher-dashboard {
-  background-color: #f3e5f5;
+  font-family: Arial, sans-serif;
   padding: 20px;
-  border-radius: 8px;
+  background-color: #f3f4fb; /* Very light blue background */
+  min-height: 100vh;
+  
+  /* Flexbox for vertical centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically */
+  align-items: center; /* Centers horizontally */
 }
 
-.teacher-dashboard h1 {
-  color: #8e24aa;
-}
-
-.teacher-dashboard .btn {
-  background-color: #6a1b9a;
+.teacher-dashboard header {
+  background-color: #A8B9FF; /* Soft light blue background */
   color: white;
-  padding: 10px 16px;
-  margin: 10px;
-  border: none;
-  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 30px; /* Added margin bottom to move the content down */
 }
 
-.teacher-dashboard .btn:hover {
-  background-color: #4a148c;
+.teacher-dashboard header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.teacher-dashboard header p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.teacher-dashboard .actions {
+  margin-top: 40px; /* Increased margin-top for more space between sections */
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.teacher-dashboard .actions .btn {
+  background-color: #B9A1FF; /* Soft purple background */
+  color: #333; /* Dark text for contrast */
+  font-size: 1.1em;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.teacher-dashboard .actions .btn:hover {
+  background-color: #8A79D4; /* Darker soft purple for hover */
+  transform: scale(1.05);
+}
+
+.teacher-dashboard .actions .btn:active {
+  background-color: #7F6FCF; /* Even darker purple when clicked */
+  transform: scale(0.98);
+}
+
+/* Logout Button */
+.teacher-dashboard .btn.logout {
+  background-color: #7F6FCF; /* Soft light purple for logout */
+}
+
+.teacher-dashboard .btn.logout:hover {
+  background-color: #C98BFF; /* Slightly darker purple for hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .teacher-dashboard .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teacher-dashboard .actions .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

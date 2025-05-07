@@ -13,6 +13,11 @@
   cursor: pointer;
   margin-bottom: 20px;
   font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #5a4482;
 }
 
 .reports-list {
@@ -52,4 +57,52 @@
   margin: 0;
   color: #444;
   line-height: 1.5;
+}
+
+.details-btn {
+  margin-top: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: #ddd;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%;
+}
+
+.edit-btn {
+  background-color: #6c5fcf;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #6c5fcf;
+}
+
+.delete-btn {
+  background-color: #6c5fcf;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #6c5fcf;
 }
